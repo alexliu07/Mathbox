@@ -29,68 +29,67 @@ public class RadSimpFragment extends Fragment {
     }
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         //组件注册
-        EditText inputX = (EditText) getView().findViewById(R.id.radSimp_inputX);
-        EditText inputN = (EditText) getView().findViewById(R.id.radSimp_inputN);
-        TextView resultText = (TextView) getView().findViewById(R.id.radSimp_result_text);
-        WebView resultDisplay = (WebView) getView().findViewById(R.id.radSimp_result_display);
-        FloatingActionButton radSimpSubmit = (FloatingActionButton) getView().findViewById(R.id.radSimp_submit);
+        EditText inputX = getView().findViewById(R.id.radSimp_inputX);
+        EditText inputN = getView().findViewById(R.id.radSimp_inputN);
+        TextView resultText = getView().findViewById(R.id.radSimp_result_text);
+        WebView resultDisplay = getView().findViewById(R.id.radSimp_result_display);
+        FloatingActionButton radSimpSubmit = getView().findViewById(R.id.radSimp_submit);
         //隐藏结果
         resultText.setVisibility(View.INVISIBLE);
         resultDisplay.setVisibility(View.INVISIBLE);
         //先加载公式以便直接显示
         MathView.loadFormula("\\\\(a\\\\sqrt[n]{x}\\\\)",resultDisplay);
         //确定键监听
-        radSimpSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view1) {
-                //是否继续的标志
-                boolean isContinue = true;
-                //存储数据
-                String strX = inputX.getText().toString();
-                String strN = inputN.getText().toString();
-                //判断是否为空
-                if(strX.isEmpty() || strN.isEmpty()){
-                    showAlert(view,getString(R.string.empty_text_alert));
-                    return;
-                }
-                //转换为数字
-                int intX = Integer.parseInt(strX);
-                int intN = Integer.parseInt(strN);
-                //判断x的值是否大于等于0
-                if(intX < 0){
-                    showAlert(view,getString(R.string.radSimp_X_less_than_zero));
-                    return;
-                }
-                //判断n的值是否大于等于2
-                if(intN < 2){
-                    showAlert(view,getString(R.string.radSimp_N_less_than_two));
-                    return;
-                }
-                //开始计算
-                String text;
-                //如果是0直接显示
-                if(intX == 0){
-                    text = "\\\\(0\\\\)";
-                }else {
-                    int ans = RadicalSimplification.simp(intX, intN);
-                    if (Math.pow(ans, intN) == intX) {
-                        //刚好开完
-                        text = "\\\\(" + ans + "\\\\)";
-                    } else if (ans == 1) {
-                        //无法化简
-                        text = "\\\\(\\\\sqrt[" + intN + "]{" + intX + "}\\\\)";
-                    } else {
-                        //其他化简情况
-                        text = "\\\\("+ ans +"\\\\sqrt["+ intN +"]{"+(int) (intX / Math.pow(ans, intN))+"}\\\\)";
-                    }
-                }
-                //准备结果
-                MathView.loadFormula(text,resultDisplay);
-                //显示结果
-                resultText.setVisibility(View.VISIBLE);
-                resultDisplay.setVisibility(View.VISIBLE);
+        radSimpSubmit.setOnClickListener(view1 -> {
+            //存储数据
+            String strX = inputX.getText().toString();
+            String strN = inputN.getText().toString();
+            //判断是否为空
+            if(strX.isEmpty() || strN.isEmpty()){
+                showAlert(view,getString(R.string.empty_text_alert));
                 return;
             }
+            //判断x或y的位数
+            if(strX.length() >= 10 || strN.length() >= 10){
+                showAlert(view,getString(R.string.int_digits_more_then_ten));
+                return;
+            }
+            //转换为数字
+            int intX = Integer.parseInt(strX);
+            int intN = Integer.parseInt(strN);
+            //判断x的值是否大于等于0
+            if(intX < 0){
+                showAlert(view,getString(R.string.radSimp_X_less_than_zero));
+                return;
+            }
+            //判断n的值是否大于等于2
+            if(intN < 2){
+                showAlert(view,getString(R.string.radSimp_N_less_than_two));
+                return;
+            }
+            //开始计算
+            String text;
+            //如果是0直接显示
+            if(intX == 0){
+                text = "\\\\(0\\\\)";
+            }else {
+                int ans = RadicalSimplification.simp(intX, intN);
+                if (Math.pow(ans, intN) == intX) {
+                    //刚好开完
+                    text = "\\\\(" + ans + "\\\\)";
+                } else if (ans == 1) {
+                    //无法化简
+                    text = "\\\\(\\\\sqrt[" + intN + "]{" + intX + "}\\\\)";
+                } else {
+                    //其他化简情况
+                    text = "\\\\("+ ans +"\\\\sqrt["+ intN +"]{"+(int) (intX / Math.pow(ans, intN))+"}\\\\)";
+                }
+            }
+            //准备结果
+            MathView.loadFormula(text,resultDisplay);
+            //显示结果
+            resultText.setVisibility(View.VISIBLE);
+            resultDisplay.setVisibility(View.VISIBLE);
         });
     }
 

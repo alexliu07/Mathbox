@@ -10,4 +10,5 @@
     <string name="empty_text_alert">输入不能为空</string>
     <string name="radSimp_N_less_than_two">n的值不能小于2</string>
     <string name="radSimp_X_less_than_zero">x的值暂时不支持小于0</string>
+    <string name="int_digits_more_then_ten">数字位数不得达到10位</string>
 </resources>
