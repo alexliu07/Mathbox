@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text_radSimp">根式化简</string>
+    <string name="radSimp_input_Int_hint">输入整数</string>
+    <string name="result_text">结果</string>
+    <string name="radSimp_input_X_hint">输入X的值</string>
+    <string name="radSimp_input_N_hint">输入N的值</string>
+    <string name="formula_hint">公式提示</string>
+</resources>

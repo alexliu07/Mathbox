@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    tools:context=".ui.radsimp.RadSimpFragment">
+
+    <ImageView
+        android:id="@+id/radSimp_formula_hint"
+        android:layout_width="114dp"
+        android:layout_height="109dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="149dp"
+        android:contentDescription="@string/formula_hint"
+        android:src="@drawable/radsimp_formula"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/radSimp_inputX_hint"
+        android:layout_width="94dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="148dp"
+        android:contentDescription="@string/radSimp_input_X_hint"
+        android:src="@drawable/input_x_hint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/radSimp_inputX"
+        android:layout_width="190dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="56dp"
+        android:ems="10"
+        android:hint="@string/radSimp_input_Int_hint"
+        android:inputType="number"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.294"
+        app:layout_constraintStart_toEndOf="@+id/radSimp_inputX_hint"
+        app:layout_constraintTop_toBottomOf="@+id/radSimp_formula_hint" />
+
+    <ImageView
+        android:id="@+id/radSimp_inputN_hint"
+        android:layout_width="94dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="48dp"
+        android:contentDescription="@string/radSimp_input_N_hint"
+        android:src="@drawable/input_n_hint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radSimp_inputX_hint" />
+
+    <EditText
+        android:id="@+id/radSimp_inputN"
+        android:layout_width="190dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="68dp"
+        android:ems="10"
+        android:hint="@string/radSimp_input_Int_hint"
+        android:inputType="number"
+        android:text="2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.153"
+        app:layout_constraintStart_toEndOf="@+id/radSimp_inputN_hint"
+        app:layout_constraintTop_toBottomOf="@+id/radSimp_inputX" />
+
+    <TextView
+        android:id="@+id/radSimp_result_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="324dp"
+        android:layout_marginEnd="177dp"
+        android:text="@string/result_text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <WebView
+        android:id="@+id/radSimp_result_display"
+        android:layout_width="412dp"
+        android:layout_height="201dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radSimp_result_text"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
