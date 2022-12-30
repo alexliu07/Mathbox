@@ -50,16 +50,23 @@ public class RadSimpFragment extends Fragment {
                 return;
             }
             //判断x或y的位数
-            if(strX.length() >= 10 || strN.length() >= 10){
-                showAlert(view,getString(R.string.int_digits_more_then_ten));
-                return;
+            if(strX.charAt(0) == '-'){
+                if(strX.length() >= 11 || strN.length() >= 10){
+                    showAlert(view,getString(R.string.int_digits_more_then_ten));
+                    return;
+                }
+            }else{
+                if(strX.length() >= 10 || strN.length() >= 10){
+                    showAlert(view,getString(R.string.int_digits_more_then_ten));
+                    return;
+                }
             }
             //转换为数字
             int intX = Integer.parseInt(strX);
             int intN = Integer.parseInt(strN);
-            //判断x的值是否大于等于0
-            if(intX < 0){
-                showAlert(view,getString(R.string.radSimp_X_less_than_zero));
+            //偶数不允许被开方数小于0
+            if (intX < 0 && (intN % 2 == 0)) {
+                showAlert(view,getString(R.string.radSimp_X_less_than_0_when_N_even));
                 return;
             }
             //判断n的值是否大于等于2

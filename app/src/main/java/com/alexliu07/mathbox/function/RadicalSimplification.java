@@ -26,19 +26,35 @@ public class RadicalSimplification {
     public static int simp(int n, int times) {
         int result = 1;
         //如果是质数直接返回1
-        if (isPrime(n)) {
+        if (isPrime(Math.abs(n))) {
             return result;
         }
-        //在2~sqrt[times](n)中寻找i^times能被n整除的数
-        for (int i = 2; Math.pow(i, times) <= n; i++) {
-            if (isEvenly(n, i, times)) {
-                //将当前n乘入结果
-                result *= i;
-                //将剩下的数表示出来，递归分解
-                n = (int) (n / Math.pow(i, times));
-                result *= simp(n, times);
-                //找到一个就停止
-                break;
+        //处理负数
+        if (n < 0) {
+            //在sqrt[times](n)~-2中寻找i^times能被n整除的数
+            for (int i = -2; Math.pow(i, times) >= n; i--) {
+                if (isEvenly(n, i, times)) {
+                    //将当前n乘入结果
+                    result *= i;
+                    //将剩下的数表示出来，递归分解
+                    n = (int) (n / Math.pow(i, times));
+                    result *= simp(n, times);
+                    //找到一个就停止
+                    break;
+                }
+            }
+        } else {
+            //在2~sqrt[times](n)中寻找i^times能被n整除的数
+            for (int i = 2; Math.pow(i, times) <= n; i++) {
+                if (isEvenly(n, i, times)) {
+                    //将当前n乘入结果
+                    result *= i;
+                    //将剩下的数表示出来，递归分解
+                    n = (int) (n / Math.pow(i, times));
+                    result *= simp(n, times);
+                    //找到一个就停止
+                    break;
+                }
             }
         }
         return result;
