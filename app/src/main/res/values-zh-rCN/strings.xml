@@ -6,4 +6,8 @@
     <string name="radSimp_input_X_hint">输入X的值</string>
     <string name="radSimp_input_N_hint">输入N的值</string>
     <string name="formula_hint">公式提示</string>
+    <string name="submit_btn_text">确定</string>
+    <string name="empty_text_alert">输入不能为空</string>
+    <string name="radSimp_N_less_than_two">n的值不能小于2</string>
+    <string name="radSimp_X_less_than_zero">x的值暂时不支持小于0</string>
 </resources>

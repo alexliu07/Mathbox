@@ -8,8 +8,12 @@
     <!--通用字段-->
     <string name="result_text">Result</string>
     <string name="formula_hint">Formula Hint</string>
+    <string name="submit_btn_text">Submit</string>
+    <string name="empty_text_alert">Input can not be empty</string>
     <!--根式化简-->
     <string name="radSimp_input_Int_hint">Input Integer</string>
     <string name="radSimp_input_X_hint">Input X</string>
     <string name="radSimp_input_N_hint">Input N</string>
+    <string name="radSimp_X_less_than_zero">The Value of x Temporarily Does Not Support Less Than 0</string>
+    <string name="radSimp_N_less_than_two">The Value of n Cannot Be Less Than 2</string>
 </resources>
