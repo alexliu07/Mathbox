@@ -79,13 +79,23 @@ public class RadSimpFragment extends Fragment {
                     text = "\\\\(" + ans + "\\\\)";
                 } else if (ans == 1) {
                     //无法化简
-                    text = "\\\\(\\\\sqrt[" + intN + "]{" + intX + "}\\\\)";
+                    //如果是二次根式则隐藏次数
+                    if(intN == 2){
+                        text = "\\\\(\\\\sqrt{" + intX + "}\\\\)";
+                    }else{
+                        text = "\\\\(\\\\sqrt[" + intN + "]{" + intX + "}\\\\)";
+                    }
                 } else {
                     //其他化简情况
-                    text = "\\\\("+ ans +"\\\\sqrt["+ intN +"]{"+(int) (intX / Math.pow(ans, intN))+"}\\\\)";
+                    //如果是二次根式则隐藏次数
+                    if(intN == 2){
+                        text = "\\\\("+ ans +"\\\\sqrt{"+(int) (intX / Math.pow(ans, intN))+"}\\\\)";
+                    }else{
+                        text = "\\\\("+ ans +"\\\\sqrt["+ intN +"]{"+(int) (intX / Math.pow(ans, intN))+"}\\\\)";
+                    }
                 }
             }
-            //准备结果
+            //加载结果
             MathView.loadFormula(text,resultDisplay);
             //显示结果
             resultText.setVisibility(View.VISIBLE);
@@ -93,13 +103,9 @@ public class RadSimpFragment extends Fragment {
         });
     }
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentRadsimpBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
-
-        return root;
+        return binding.getRoot();
     }
 
     @Override
