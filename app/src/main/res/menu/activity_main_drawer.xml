@@ -6,12 +6,12 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_radSimp"
-            android:icon="@drawable/sqrt"
+            android:icon="@drawable/icon_facsimp"
             android:title="@string/text_radSimp" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:id="@+id/nav_facDecomp"
+            android:icon="@drawable/icon_facdecomp"
+            android:title="@string/text_facDecomp" />
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"

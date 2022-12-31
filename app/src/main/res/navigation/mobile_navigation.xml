@@ -7,15 +7,15 @@
 
     <fragment
         android:id="@+id/nav_radSimp"
-        android:name="com.alexliu07.mathbox.ui.radsimp.RadSimpFragment"
+        android:name="com.alexliu07.mathbox.ui.RadSimpFragment"
         android:label="@string/text_radSimp"
         tools:layout="@layout/fragment_radsimp" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.alexliu07.mathbox.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_facDecomp"
+        android:name="com.alexliu07.mathbox.ui.FacDecompFragment"
+        android:label="@string/text_facDecomp"
+        tools:layout="@layout/fragment_facdecomp" />
 
     <fragment
         android:id="@+id/nav_slideshow"

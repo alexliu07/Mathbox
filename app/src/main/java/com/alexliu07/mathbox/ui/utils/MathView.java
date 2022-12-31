@@ -1,4 +1,4 @@
-package com.alexliu07.mathbox.ui;
+package com.alexliu07.mathbox.ui.utils;
 
 import android.webkit.WebSettings;
 import android.webkit.WebView;

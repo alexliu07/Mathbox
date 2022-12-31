@@ -1,12 +1,10 @@
-package com.alexliu07.mathbox.ui.radsimp;
+package com.alexliu07.mathbox.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -17,22 +15,19 @@ import androidx.fragment.app.Fragment;
 import com.alexliu07.mathbox.R;
 import com.alexliu07.mathbox.databinding.FragmentRadsimpBinding;
 import com.alexliu07.mathbox.function.RadicalSimplification;
-import com.alexliu07.mathbox.ui.MathView;
+import com.alexliu07.mathbox.ui.utils.MathView;
+import com.alexliu07.mathbox.ui.utils.MessageBox;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 public class RadSimpFragment extends Fragment {
     private FragmentRadsimpBinding binding;
-    //显示提示
-    static void showAlert(View view,String text){
-        Snackbar.make(view,text,Snackbar.LENGTH_SHORT).show();
-    }
+
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         //组件注册
         EditText inputX = getView().findViewById(R.id.radSimp_inputX);
         EditText inputN = getView().findViewById(R.id.radSimp_inputN);
         TextView resultText = getView().findViewById(R.id.radSimp_result_text);
-        WebView resultDisplay = getView().findViewById(R.id.radSimp_result_display);
+        WebView resultDisplay = getView().findViewById(R.id.facDecomp_result_display);
         FloatingActionButton radSimpSubmit = getView().findViewById(R.id.radSimp_submit);
         //隐藏结果
         resultText.setVisibility(View.INVISIBLE);
@@ -46,18 +41,18 @@ public class RadSimpFragment extends Fragment {
             String strN = inputN.getText().toString();
             //判断是否为空
             if(strX.isEmpty() || strN.isEmpty()){
-                showAlert(view,getString(R.string.empty_text_alert));
+                MessageBox.showAlert(view,getString(R.string.empty_text_alert));
                 return;
             }
             //判断x或y的位数
             if(strX.charAt(0) == '-'){
                 if(strX.length() >= 11 || strN.length() >= 10){
-                    showAlert(view,getString(R.string.int_digits_more_then_ten));
+                    MessageBox.showAlert(view,getString(R.string.int_digits_more_then_ten));
                     return;
                 }
             }else{
                 if(strX.length() >= 10 || strN.length() >= 10){
-                    showAlert(view,getString(R.string.int_digits_more_then_ten));
+                    MessageBox.showAlert(view,getString(R.string.int_digits_more_then_ten));
                     return;
                 }
             }
@@ -66,12 +61,12 @@ public class RadSimpFragment extends Fragment {
             int intN = Integer.parseInt(strN);
             //偶数不允许被开方数小于0
             if (intX < 0 && (intN % 2 == 0)) {
-                showAlert(view,getString(R.string.radSimp_X_less_than_0_when_N_even));
+                MessageBox.showAlert(view,getString(R.string.radSimp_X_less_than_0_when_N_even));
                 return;
             }
             //判断n的值是否大于等于2
             if(intN < 2){
-                showAlert(view,getString(R.string.radSimp_N_less_than_two));
+                MessageBox.showAlert(view,getString(R.string.radSimp_N_less_than_two));
                 return;
             }
             //开始计算

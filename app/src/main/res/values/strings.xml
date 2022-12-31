@@ -2,9 +2,9 @@
     <string name="app_name" translatable="false">Mathbox</string>
     <string name="nav_header_desc" translatable="false">Navigation header</string>
     <!--菜单-->
-    <string name="menu_gallery" translatable="false">Gallery</string>
     <string name="menu_slideshow" translatable="false">Slideshow</string>
     <string name="text_radSimp">Radical Simplification</string>
+    <string name="text_facDecomp">Factor Decomposition</string>
     <!--通用字段-->
     <string name="result_text">Result</string>
     <string name="formula_hint">Formula Hint</string>
@@ -17,4 +17,6 @@
     <string name="radSimp_input_N_hint">Input N</string>
     <string name="radSimp_X_less_than_0_when_N_even">When the value of n is even, the value of x is not allowed to be less than 0.</string>
     <string name="radSimp_N_less_than_two">The value of n cannot be less than 2.</string>
+    <!--因式分解-->
+    <string name="facDecomp_input_num_hint">Enter Number</string>
 </resources>
