@@ -11,6 +11,6 @@
     <string name="radSimp_N_less_than_two">n的值不能小于2</string>
     <string name="int_digits_more_then_ten">数字位数不得达到10位</string>
     <string name="radSimp_X_less_than_0_when_N_even">当n的值为偶数时，x的值不允许小于0</string>
-    <string name="text_facDecomp">分解因数</string>
+    <string name="text_facDecomp">寻找因数</string>
     <string name="facDecomp_input_num_hint">输入数字</string>
 </resources>
