@@ -17,6 +17,7 @@
     <string name="radSimp_input_N_hint">Input N</string>
     <string name="radSimp_X_less_than_0_when_N_even">When the value of n is even, the value of x is not allowed to be less than 0.</string>
     <string name="radSimp_N_less_than_two">The value of n cannot be less than 2.</string>
+    <string name="radSimp_default_N" translatable="false">2</string>
     <!--因式分解-->
     <string name="facDecomp_input_num_hint">Enter Number</string>
 </resources>
