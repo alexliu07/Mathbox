@@ -15,8 +15,6 @@ import androidx.fragment.app.Fragment;
 import com.alexliu07.mathbox.R;
 import com.alexliu07.mathbox.databinding.FragmentRadsimpBinding;
 import com.alexliu07.mathbox.function.RadicalSimplification;
-import com.alexliu07.mathbox.ui.utils.MathView;
-import com.alexliu07.mathbox.ui.utils.MessageBox;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class RadSimpFragment extends Fragment {
@@ -28,45 +26,29 @@ public class RadSimpFragment extends Fragment {
         EditText inputN = getView().findViewById(R.id.radSimp_inputN);
         TextView resultText = getView().findViewById(R.id.radSimp_result_text);
         WebView resultDisplay = getView().findViewById(R.id.facDecomp_result_display);
-        FloatingActionButton radSimpSubmit = getView().findViewById(R.id.radSimp_submit);
-        //隐藏结果
-        resultText.setVisibility(View.INVISIBLE);
-        resultDisplay.setVisibility(View.INVISIBLE);
-        //先加载公式以便直接显示
-        MathView.loadFormula("\\\\(a\\\\sqrt[n]{x}\\\\)",resultDisplay);
+        FloatingActionButton submitBtn = getView().findViewById(R.id.radSimp_submit);
+        //初始化页面
+        UIUtils.initFragment(resultText,resultDisplay);
         //确定键监听
-        radSimpSubmit.setOnClickListener(view1 -> {
+        submitBtn.setOnClickListener(view1 -> {
             //存储数据
             String strX = inputX.getText().toString();
             String strN = inputN.getText().toString();
-            //判断是否为空
-            if(strX.isEmpty() || strN.isEmpty()){
-                MessageBox.showAlert(view,getString(R.string.empty_text_alert));
+            //验证是否合规
+            if(!(UIUtils.isCorrect(view,strX,getString(R.string.empty_text_alert),getString(R.string.int_digits_more_then_ten)) && UIUtils.isCorrect(view,strN,getString(R.string.empty_text_alert),getString(R.string.int_digits_more_then_ten)))){
                 return;
-            }
-            //判断x或y的位数
-            if(strX.charAt(0) == '-'){
-                if(strX.length() >= 11 || strN.length() >= 10){
-                    MessageBox.showAlert(view,getString(R.string.int_digits_more_then_ten));
-                    return;
-                }
-            }else{
-                if(strX.length() >= 10 || strN.length() >= 10){
-                    MessageBox.showAlert(view,getString(R.string.int_digits_more_then_ten));
-                    return;
-                }
             }
             //转换为数字
             int intX = Integer.parseInt(strX);
             int intN = Integer.parseInt(strN);
             //偶数不允许被开方数小于0
             if (intX < 0 && (intN % 2 == 0)) {
-                MessageBox.showAlert(view,getString(R.string.radSimp_X_less_than_0_when_N_even));
+                UIUtils.showAlert(view,getString(R.string.radSimp_X_less_than_0_when_N_even));
                 return;
             }
             //判断n的值是否大于等于2
             if(intN < 2){
-                MessageBox.showAlert(view,getString(R.string.radSimp_N_less_than_two));
+                UIUtils.showAlert(view,getString(R.string.radSimp_N_less_than_two));
                 return;
             }
             //开始计算
@@ -97,11 +79,8 @@ public class RadSimpFragment extends Fragment {
                     }
                 }
             }
-            //加载结果
-            MathView.loadFormula(text,resultDisplay);
             //显示结果
-            resultText.setVisibility(View.VISIBLE);
-            resultDisplay.setVisibility(View.VISIBLE);
+            UIUtils.showResult(text,resultText,resultDisplay);
         });
     }
 
