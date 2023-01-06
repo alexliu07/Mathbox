@@ -2,7 +2,6 @@
     <string name="app_name" translatable="false">Mathbox</string>
     <string name="nav_header_desc" translatable="false">Navigation header</string>
     <!--菜单-->
-    <string name="menu_slideshow" translatable="false">Slideshow</string>
     <string name="text_radSimp">Radical Simplification</string>
     <string name="text_facDecomp">Factor Decomposition</string>
     <string name="text_comFacFind">Common Factor Finding</string>
