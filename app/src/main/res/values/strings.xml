@@ -5,22 +5,23 @@
     <string name="text_radSimp">Radical Simplification</string>
     <string name="text_facDecomp">Factor Decomposition</string>
     <string name="text_comFacFind">Common Factor Finding</string>
+    <string name="text_fracAppr">Fraction Approximation</string>
     <!--通用字段-->
     <string name="result_text">Result</string>
     <string name="formula_hint">Formula Hint</string>
     <string name="submit_btn_text">Submit</string>
     <string name="empty_text_alert">Input can not be empty</string>
-    <string name="int_digits_more_then_ten">The number of digits must not exceed 10.</string>
+    <string name="input_cant_be_zero">Input can not be zero</string>
+    <string name="int_digits_more_then_ten">The number of integer digits must not exceed 10.</string>
+    <string name="double_digits_more_than_17">The number of decimal digits must not exceed 17.</string>
+    <string name="input_b_cant_be_zero">Denominator must not be 0.</string>
     <!--输入提示-->
     <string name="input_num_general">Input Number</string>
-    <string name="input_num_X">Input X</string>
-    <string name="input_num_N">Input N</string>
     <string name="input_first_num">Input First Number</string>
     <string name="input_second_num">Input Second Number</string>
-    <!--根式化简-->
+    <!--特殊字段-->
     <string name="radSimp_X_less_than_0_when_N_even">When the value of n is even, the value of x is not allowed to be less than 0.</string>
     <string name="radSimp_N_less_than_two">The value of n cannot be less than 2.</string>
     <string name="radSimp_default_N" translatable="false">2</string>
-    <!--寻找公因数-->
 
 </resources>

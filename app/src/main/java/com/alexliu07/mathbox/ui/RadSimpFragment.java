@@ -25,7 +25,7 @@ public class RadSimpFragment extends Fragment {
         EditText inputX = getView().findViewById(R.id.radSimp_inputX);
         EditText inputN = getView().findViewById(R.id.radSimp_inputN);
         TextView resultText = getView().findViewById(R.id.radSimp_result_text);
-        WebView resultDisplay = getView().findViewById(R.id.facDecomp_result_display);
+        WebView resultDisplay = getView().findViewById(R.id.radSimp_result_display);
         FloatingActionButton submitBtn = getView().findViewById(R.id.radSimp_submit);
         //初始化页面
         UIUtils.initFragment(resultText,resultDisplay);
@@ -35,7 +35,7 @@ public class RadSimpFragment extends Fragment {
             String strX = inputX.getText().toString();
             String strN = inputN.getText().toString();
             //验证是否合规
-            if(!(UIUtils.isCorrect(view,strX,getString(R.string.empty_text_alert),getString(R.string.int_digits_more_then_ten)) && UIUtils.isCorrect(view,strN,getString(R.string.empty_text_alert),getString(R.string.int_digits_more_then_ten)))){
+            if(!(UIUtils.isCorrectInt(view,strX,getString(R.string.empty_text_alert),getString(R.string.int_digits_more_then_ten)) && UIUtils.isCorrectInt(view,strN,getString(R.string.empty_text_alert),getString(R.string.int_digits_more_then_ten)))){
                 return;
             }
             //转换为数字

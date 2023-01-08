@@ -37,11 +37,16 @@ public class FacDecompFragment extends Fragment {
             //获取数据
             String num = inputNumber.getText().toString();
             //验证是否合规
-            if(!UIUtils.isCorrect(view,num,getString(R.string.empty_text_alert),getString(R.string.int_digits_more_then_ten))){
+            if(!UIUtils.isCorrectInt(view,num,getString(R.string.empty_text_alert),getString(R.string.int_digits_more_then_ten))){
+                return;
+            }
+            //验证是否为0
+            int n = Integer.parseInt(num);
+            if(n == 0){
+                UIUtils.showAlert(view,getString(R.string.input_cant_be_zero));
                 return;
             }
             //继续计算
-            int n = Integer.parseInt(num);
             ArrayList<Integer> nums = FactorDecomposition.facDecomp(n);
             StringBuilder text = new StringBuilder();
             for(int i=0;i<nums.size();i+=2){

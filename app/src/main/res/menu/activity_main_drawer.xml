@@ -16,5 +16,9 @@
             android:id="@+id/nav_comFacFind"
             android:icon="@drawable/icon_number"
             android:title="@string/text_comFacFind" />
+        <item
+            android:id="@+id/nav_fracAppr"
+            android:icon="@drawable/icon_fraction"
+            android:title="@string/text_fracAppr" />
     </group>
 </menu>

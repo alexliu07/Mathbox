@@ -35,8 +35,8 @@ public class UIUtils {
         //初始化公式
         loadFormula("\\\\(loading\\\\)",display);
     }
-    //验证是否合规
-    public static boolean isCorrect(View view,String text,String empty,String longer){
+    //验证整数是否合规
+    public static boolean isCorrectInt(View view, String text, String empty, String longer){
         //判空
         if(text.isEmpty()){
             showAlert(view,empty);
@@ -45,12 +45,57 @@ public class UIUtils {
         //判断位数
         if(text.charAt(0) == '-'){
             if(text.length() >= 11){
-                UIUtils.showAlert(view,longer);
+                showAlert(view,longer);
                 return false;
             }
         }else{
             if(text.length() >= 10){
-                UIUtils.showAlert(view,longer);
+                showAlert(view,longer);
+                return false;
+            }
+        }
+        return true;
+    }
+    //获取小数位数
+    public static int getDoubleBits(String n){
+        int bits=0;
+        for(int i=0;i<n.length();i++){
+            if(n.charAt(i) == '.'){
+                bits = n.length()-i-1;
+                break;
+            }
+        }
+        return bits;
+    }
+    //验证小数是否合规
+    public static boolean isCorrectDouble(View view, String text, String empty, String intLonger,String doubleLonger){
+        //判空
+        if(text.isEmpty()){
+            showAlert(view,empty);
+            return false;
+        }
+        //获取小数位数
+        int doublebits = getDoubleBits(text);
+        //判断位数
+        if(text.charAt(0) == '-'){
+            //整数
+            int intbits = text.length()-doublebits-2;
+            if(intbits >= 10){
+                showAlert(view,intLonger);
+                return false;
+            }
+            if(doublebits >= 17){
+                showAlert(view,doubleLonger);
+                return false;
+            }
+        }else{
+            int intbits = text.length()-doublebits-1;
+            if(intbits >= 10){
+                showAlert(view,intLonger);
+                return false;
+            }
+            if(doublebits >= 17){
+                showAlert(view,doubleLonger);
                 return false;
             }
         }

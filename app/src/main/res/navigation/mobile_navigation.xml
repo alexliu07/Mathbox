@@ -22,4 +22,10 @@
         android:name="com.alexliu07.mathbox.ui.ComFacFindFragment"
         android:label="@string/text_comFacFind"
         tools:layout="@layout/fragment_comfacfind" />
+
+    <fragment
+        android:id="@+id/nav_fracAppr"
+        android:name="com.alexliu07.mathbox.ui.FracApprFragment"
+        android:label="@string/text_fracAppr"
+        tools:layout="@layout/fragment_fracappr" />
 </navigation>

@@ -39,12 +39,17 @@ public class ComFacFindFragment extends Fragment {
             String num1 = inputFirstNum.getText().toString();
             String num2 = inputSecondNum.getText().toString();
             //判断是否合规
-            if(!(UIUtils.isCorrect(view,num1,getString(R.string.empty_text_alert),getString(R.string.int_digits_more_then_ten)) && UIUtils.isCorrect(view,num2,getString(R.string.empty_text_alert),getString(R.string.int_digits_more_then_ten)))){
+            if(!(UIUtils.isCorrectInt(view,num1,getString(R.string.empty_text_alert),getString(R.string.int_digits_more_then_ten)) && UIUtils.isCorrectInt(view,num2,getString(R.string.empty_text_alert),getString(R.string.int_digits_more_then_ten)))){
                 return;
             }
             //转换成数字
             int a = Integer.parseInt(num1);
             int b = Integer.parseInt(num2);
+            //验证是否为0
+            if(a == 0 || b == 0){
+                UIUtils.showAlert(view,getString(R.string.input_cant_be_zero));
+                return;
+            }
             //获取公因数
             ArrayList<Integer> commonFactors = CommonFactorFinding.findcomfac(a,b);
             //准备显示

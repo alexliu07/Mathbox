@@ -2,17 +2,19 @@
 <resources>
     <string name="text_radSimp">根式化简</string>
     <string name="result_text">结果</string>
-    <string name="input_num_X">输入X的值</string>
-    <string name="input_num_N">输入N的值</string>
     <string name="formula_hint">公式提示</string>
     <string name="submit_btn_text">确定</string>
     <string name="empty_text_alert">输入不能为空</string>
     <string name="radSimp_N_less_than_two">n的值不能小于2</string>
-    <string name="int_digits_more_then_ten">数字位数不得达到10位</string>
+    <string name="int_digits_more_then_ten">整数位数不得达到10位</string>
     <string name="radSimp_X_less_than_0_when_N_even">当n的值为偶数时，x的值不允许小于0</string>
     <string name="text_facDecomp">寻找因数</string>
     <string name="input_num_general">输入数字</string>
     <string name="input_first_num">输入第一个数字</string>
     <string name="input_second_num">输入第二个数字</string>
     <string name="text_comFacFind">寻找公因数</string>
+    <string name="text_fracAppr">分数约分</string>
+    <string name="input_cant_be_zero">输入不能为0</string>
+    <string name="double_digits_more_than_17">小数位数不得达到17位</string>
+    <string name="input_b_cant_be_zero">分母不得为0</string>
 </resources>
