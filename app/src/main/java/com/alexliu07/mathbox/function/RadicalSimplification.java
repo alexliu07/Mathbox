@@ -12,23 +12,9 @@ public class RadicalSimplification {
         return true;
     }
 
-    //判断质数
-    public static boolean isPrime(int n) {
-        for (int i = 2; i * i <= n; i++) {
-            if (n % i == 0) {
-                return false;
-            }
-        }
-        return true;
-    }
-
     //化简二次根式
     public static int simp(int n, int times) {
         int result = 1;
-        //如果是质数直接返回1
-        if (isPrime(Math.abs(n))) {
-            return result;
-        }
         //处理负数
         if (n < 0) {
             //在sqrt[times](n)~-2中寻找i^times能被n整除的数
