@@ -28,4 +28,10 @@
         android:name="com.alexliu07.mathbox.ui.FracApprFragment"
         android:label="@string/text_fracAppr"
         tools:layout="@layout/fragment_fracappr" />
+
+    <fragment
+        android:id="@+id/nav_quaEquaSolving"
+        android:name="com.alexliu07.mathbox.ui.QuaEquaSolvingFragment"
+        android:label="@string/text_quaEquaSolving"
+        tools:layout="@layout/fragment_quaequasolving" />
 </navigation>

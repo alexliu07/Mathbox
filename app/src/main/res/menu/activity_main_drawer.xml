@@ -20,5 +20,9 @@
             android:id="@+id/nav_fracAppr"
             android:icon="@drawable/icon_fraction"
             android:title="@string/text_fracAppr" />
+        <item
+            android:id="@+id/nav_quaEquaSolving"
+            android:icon="@drawable/icon_square"
+            android:title="@string/text_quaEquaSolving" />
     </group>
 </menu>

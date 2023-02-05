@@ -4,78 +4,99 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.FracApprFragment">
+    tools:context=".ui.QuaEquaSolvingFragment">
 
     <ImageView
-        android:id="@+id/fracAppr_formula_hint"
-        android:layout_width="114dp"
-        android:layout_height="109dp"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="149dp"
+        android:id="@+id/quaEqua_formula_hint"
+        android:layout_width="366dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="51dp"
         android:contentDescription="@string/formula_hint"
-        android:src="@drawable/fraction_formula"
+        android:src="@drawable/quaequa_formula"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/fracAppr_inputA_hint"
+        android:id="@+id/quaEqua_inputA_hint"
         android:layout_width="94dp"
         android:layout_height="55dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="168dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="136dp"
         android:contentDescription="@string/input_num_general"
         android:src="@drawable/input_a"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/fracAppr_inputB_hint"
+        android:id="@+id/quaEqua_inputB_hint"
         android:layout_width="94dp"
         android:layout_height="55dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="28dp"
         android:contentDescription="@string/input_num_general"
         android:src="@drawable/input_b"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fracAppr_inputA_hint" />
+        app:layout_constraintTop_toBottomOf="@+id/quaEqua_inputA_hint" />
+
+    <ImageView
+        android:id="@+id/quaEqua_inputC_hint"
+        android:layout_width="94dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="28dp"
+        android:contentDescription="@string/input_num_general"
+        android:src="@drawable/input_c"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quaEqua_inputB_hint" />
 
     <EditText
-        android:id="@+id/fracAppr_inputA"
+        android:id="@+id/quaEqua_inputA"
         android:layout_width="163dp"
         android:layout_height="61dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="128dp"
         android:ems="10"
         android:hint="@string/input_num_general"
-        android:inputType="numberSigned|numberDecimal|number"
+        android:inputType="numberSigned|number|numberDecimal"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintStart_toEndOf="@+id/fracAppr_inputA_hint"
+        app:layout_constraintStart_toEndOf="@+id/quaEqua_inputA_hint"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/fracAppr_inputB"
+        android:id="@+id/quaEqua_inputB"
         android:layout_width="163dp"
         android:layout_height="61dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="@string/input_num_general"
-        android:inputType="numberSigned|numberDecimal|number"
+        android:inputType="numberSigned|number|numberDecimal"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintStart_toEndOf="@+id/fracAppr_inputB_hint"
-        app:layout_constraintTop_toBottomOf="@+id/fracAppr_inputA" />
+        app:layout_constraintStart_toEndOf="@+id/quaEqua_inputB_hint"
+        app:layout_constraintTop_toBottomOf="@+id/quaEqua_inputA" />
 
-
+    <EditText
+        android:id="@+id/quaEqua_inputC"
+        android:layout_width="163dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="@string/input_num_general"
+        android:inputType="numberSigned|number|numberDecimal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toEndOf="@+id/quaEqua_inputC_hint"
+        app:layout_constraintTop_toBottomOf="@+id/quaEqua_inputB" />
 
     <TextView
-        android:id="@+id/fracAppr_result_text"
+        android:id="@+id/quaEqua_result_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="143dp"
-        android:layout_marginTop="340dp"
+        android:layout_marginTop="368dp"
         android:layout_marginEnd="142dp"
         android:gravity="center"
         android:text="@string/result_text"
@@ -86,19 +107,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <WebView
-        android:id="@+id/fracAppr_result_display"
+        android:id="@+id/quaEqua_result_display"
         android:layout_width="412dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="433dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fracAppr_result_text">
+        app:layout_constraintTop_toTopOf="parent">
 
     </WebView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fracAppr_submit"
+        android:id="@+id/quaEqua_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
@@ -112,4 +132,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/submit" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,7 @@
     <string name="text_facDecomp">Factor Decomposition</string>
     <string name="text_comFacFind">Common Factor Finding</string>
     <string name="text_fracAppr">Fraction Approximation</string>
+    <string name="text_quaEquaSolving">Quadratic Equations Solving</string>
     <!--通用字段-->
     <string name="result_text">Result</string>
     <string name="formula_hint">Formula Hint</string>

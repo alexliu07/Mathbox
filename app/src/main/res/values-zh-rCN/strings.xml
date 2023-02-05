@@ -17,4 +17,5 @@
     <string name="input_cant_be_zero">输入不能为0</string>
     <string name="double_digits_more_than_17">小数位数不得达到17位</string>
     <string name="input_b_cant_be_zero">分母不得为0</string>
+    <string name="text_quaEquaSolving">一元二次方程求解</string>
 </resources>
