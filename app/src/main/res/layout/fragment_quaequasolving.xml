@@ -73,7 +73,7 @@
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="@string/input_num_general"
-        android:inputType="numberSigned|number|numberDecimal"
+        android:inputType="numberSigned|number"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toEndOf="@+id/quaEqua_inputB_hint"
         app:layout_constraintTop_toBottomOf="@+id/quaEqua_inputA" />
@@ -86,7 +86,7 @@
         android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="@string/input_num_general"
-        android:inputType="numberSigned|number|numberDecimal"
+        android:inputType="numberSigned|number"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toEndOf="@+id/quaEqua_inputC_hint"
         app:layout_constraintTop_toBottomOf="@+id/quaEqua_inputB" />
