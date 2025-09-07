@@ -60,7 +60,7 @@
         android:layout_marginTop="128dp"
         android:ems="10"
         android:hint="@string/input_num_general"
-        android:inputType="numberSigned|number|numberDecimal"
+        android:inputType="number|numberSigned"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toEndOf="@+id/quaEqua_inputA_hint"
         app:layout_constraintTop_toTopOf="parent" />
